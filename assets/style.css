@@ -1,0 +1,41 @@
+h1 {
+    text-align: center;
+}
+
+#generate {
+    background-color: red;
+    color: white;
+    float: left;
+    border-radius: 30px;
+    padding: 10px 28px;
+    margin-top: 15px;
+}
+
+#copy {
+    background-color: rgb(153, 147, 147);
+    color: white;
+    float: right;
+    border-radius: 30px;
+    padding: 10px 28px;
+    margin-top: 15px;
+}
+
+#container {
+    margin: 30px;
+}
+
+#password {
+    border: 2px dashed rgb(153, 147, 147);
+    resize: none;
+    width: 100%;
+    height: 200px;
+    margin-top: 15px;
+    margin-bottom: 9px;
+    text-align: center;
+    line-height: 200px;
+}
+
+#underscore {
+    border-top: 2px solid rgb(190, 182, 182);
+    border-bottom: 2px solid rgb(190, 182, 182);
+}
