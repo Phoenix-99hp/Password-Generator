@@ -3,7 +3,7 @@ var btnGenerate = document.getElementById("generate");
 var btnCopy = document.getElementById("copy");
 
 // An array of the 4 different password options (special, numeric, lowercase, uppercase)
-var charactersArr = ["' '!\"#$%&\'()*+,-./:;<=>?@\\[]^_\`{|}~", "0123456789", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+var charactersArr = ["' '!\"#$%&()*+,-./:;<=>?@\\[]^_\`{|}~", "0123456789", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 
 // Variables for each possible combination of selections
 var all = charactersArr[0] + charactersArr[1] + charactersArr[2] + charactersArr[3];
@@ -22,13 +22,9 @@ var numeric = charactersArr[1];
 var lower = charactersArr[2];
 var upper = charactersArr[3];
 
-var generatedPassword = "";
-
-function clearDisplay() {
-    textAreaEl.textContent = "";
-}
-
 btnGenerate.addEventListener("click", function (e) {
+
+    var generatedPassword = "";
 
     // When the button is clicked the prompt is run
     var characterCount = prompt("Choose a password length between 8 and 128 characters");
@@ -57,105 +53,90 @@ btnGenerate.addEventListener("click", function (e) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += all.charAt(Math.floor(Math.random() * all.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
     else if (specialCharacters && numericCharacters && lowercaseCharacters) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += specialNumericLower.charAt(Math.floor(Math.random() * specialNumericLower.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
     else if (specialCharacters && numericCharacters && uppercaseCharacters) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += specialNumericUpper.charAt(Math.floor(Math.random() * specialNumericUpper.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
     else if (specialCharacters && lowercaseCharacters && uppercaseCharacters) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += specialLowerUpper.charAt(Math.floor(Math.random() * specialLowerUpper.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
     else if (specialCharacters && lowercaseCharacters) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += specialLower.charAt(Math.floor(Math.random() * specialLower.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
     else if (specialCharacters && uppercaseCharacters) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += specialUpper.charAt(Math.floor(Math.random() * specialUpper.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
     else if (specialCharacters && numericCharacters) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += specialNumeric.charAt(Math.floor(Math.random() * specialNumeric.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
     else if (numericCharacters && lowercaseCharacters && uppercaseCharacters) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += numericLowerUpper.charAt(Math.floor(Math.random() * numericLowerUpper.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
     else if (numericCharacters && uppercaseCharacters) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += numericUpper.charAt(Math.floor(Math.random() * numericUpper.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
     else if (numericCharacters && lowercaseCharacters) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += numericLower.charAt(Math.floor(Math.random() * numericLower.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
     else if (lowercaseCharacters && uppercaseCharacters) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += lowerUpper.charAt(Math.floor(Math.random() * lowerUpper.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
     else if (specialCharacters) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += special.charAt(Math.floor(Math.random() * special.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
     else if (numericCharacters) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += numeric.charAt(Math.floor(Math.random() * numeric.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
     else if (lowercaseCharacters) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += lower.charAt(Math.floor(Math.random() * lower.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
     else if (uppercaseCharacters) {
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += upper.charAt(Math.floor(Math.random() * upper.length));
         }
-        clearDisplay();
         textAreaEl.textContent = generatedPassword;
     }
 })
