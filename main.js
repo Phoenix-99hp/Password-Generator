@@ -22,7 +22,6 @@ var numeric = charactersArr[1];
 var lower = charactersArr[2];
 var upper = charactersArr[3];
 
-
 var generatedPassword = "";
 
 function clearDisplay() {
@@ -30,12 +29,25 @@ function clearDisplay() {
 }
 
 btnGenerate.addEventListener("click", function (e) {
-    // When the button is clicked the prompts are run
+
+    // When the button is clicked the prompt is run
     var characterCount = prompt("Choose a password length between 8 and 128 characters");
-    var specialCharacters = confirm("Do you want the password to include special characters?");
-    var numericCharacters = confirm("Do you want the password to include numeric characters?");
-    var lowercaseCharacters = confirm("Do you want the password to include lowercase characters?");
-    var uppercaseCharacters = confirm("Do you want the password to include uppercase characters?");
+
+    // The below conditions ensure valid inputs into the prompt
+    if (isNaN(characterCount) === true) {
+        alert("You did not enter a number");
+    }
+    else if ((characterCount < 8) || (characterCount > 128)) {
+        alert("The number you enter must be between 8 and 128");
+    }
+    // If the input is valid continue with the confirms
+    else {
+        var specialCharacters = confirm("Do you want the password to include special characters?");
+        var numericCharacters = confirm("Do you want the password to include numeric characters?");
+        var lowercaseCharacters = confirm("Do you want the password to include lowercase characters?");
+        var uppercaseCharacters = confirm("Do you want the password to include uppercase characters?");
+    }
+    // Determines characters based on confirm selections
     if (specialCharacters && numericCharacters && lowercaseCharacters && uppercaseCharacters) {
         // Loops through the relevant string and selects a random value as many times as required by the character count
         for (var i = 0; i < characterCount; i++) {
