@@ -47,8 +47,12 @@ btnGenerate.addEventListener("click", function (e) {
         var lowercaseCharacters = confirm("Do you want the password to include lowercase characters?");
         var uppercaseCharacters = confirm("Do you want the password to include uppercase characters?");
     }
+    // Ensures at least one character type is selected
+    if (specialCharacters === false && numericCharacters === false && lowercaseCharacters === false && uppercaseCharacters === false) {
+        alert("You must select at least one character type");
+    }
     // Determines characters based on confirm selections
-    if (specialCharacters && numericCharacters && lowercaseCharacters && uppercaseCharacters) {
+    else if (specialCharacters && numericCharacters && lowercaseCharacters && uppercaseCharacters) {
         // Loops through the relevant string and selects a random value as many times as required by the character count
         for (var i = 0; i < characterCount; i++) {
             generatedPassword += all.charAt(Math.floor(Math.random() * all.length));
